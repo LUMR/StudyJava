@@ -18,6 +18,15 @@ public class Manager extends Employee{
     }
 
     @Override
+    public String toString() {
+        return "Manager{" +"name='" + getName() + '\'' +
+                ", salary=" + getSalary() +
+                ", hireDay=" + getHireDay() +
+                ", bouns=" + bouns +
+                '}';
+    }
+
+    @Override
     public double getSalary() {
         return super.getSalary()+bouns;
     }
@@ -25,4 +34,5 @@ public class Manager extends Employee{
     public void setBouns(double bouns) {
         this.bouns = bouns;
     }
+
 }

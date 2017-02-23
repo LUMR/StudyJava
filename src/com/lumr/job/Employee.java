@@ -40,6 +40,15 @@ public class Employee {
         salary += raise;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", salary=" + salary +
+                ", hireDay=" + hireDay +
+                '}';
+    }
+
     /**
      * 输出信息
      */

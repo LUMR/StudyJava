@@ -1,35 +1,22 @@
 package com.lumr.test;
 
 
+import com.lumr.animal.*;
+
 /**
  * Created by lumr on 2017/2/21.
+ * @author FS
  */
 public class DoTest {
-    public DoTest() {
-
-    }
 
     //    nothing to do now
     public static void main(String[] args) {
-        System.out.println("看我做测试：");
-        DoTest newtest = new DoTest();
-        newtest.show();
-        newtest.test();
-        System.out.println("str");
-
+        Pet mypet = new Dog("狗", 1, "雄性");
+        Pet thepet = new Penguin("奇尔", 1, "磁性");
+        Penguin pen = (Penguin) thepet;
+        Dog dog = (Dog) mypet;
+        dog.bite();
+        pen.fly();
     }
 
-    public void show(){
-        System.out.println("sout");
-        System.out.printf("看得我有点晕");
-
-    }
-
-    public void test(){
-        String str = "start";
-        for (int i = 0; i < 5; i++) {
-            str += "none";
-        }
-
-    }
 }
