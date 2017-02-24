@@ -9,7 +9,6 @@ import com.lumr.animal.*;
  */
 public class DoTest {
 
-    //    nothing to do now
     public static void main(String[] args) {
         Pet mypet = new Dog("狗", 1, "雄性");
         Pet thepet = new Penguin("奇尔", 1, "磁性");

@@ -1,12 +1,15 @@
 package com.lumr.job;
 
+import com.lumr.abstractClasses.Person;
+
 /**
  * Created by FS on 2017/2/23.
  */
-public class Student {
+public class Student extends Person{
     private int id;
     private String name;
     private int age;
+    private String major;
 
     public Student() {
         this.id = 0;
@@ -18,6 +21,11 @@ public class Student {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String getDescription() {
+        return "a student majoring in" + major;
     }
 
     @Override

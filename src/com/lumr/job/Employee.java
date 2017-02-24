@@ -1,13 +1,14 @@
 package com.lumr.job;
 
 import java.time.LocalDate;
+import com.lumr.abstractClasses.Person;
 
 /**
  * 雇员的类
  * Created by lumr on 2017/2/22.
  * @author lumr
  */
-public class Employee {
+public class Employee extends Person{
     private String name;
     private double salary;
     private LocalDate hireDay;
@@ -69,6 +70,11 @@ public class Employee {
 
     public void setHireDay(LocalDate hireDay) {
         this.hireDay = hireDay;
+    }
+
+    @Override
+    public String getDescription() {
+        return String.format("an employee with a salay of $%.2f", getSalary());
     }
 
     public String getName() {
