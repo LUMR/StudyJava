@@ -18,6 +18,14 @@ public class Manager extends Employee{
     }
 
     @Override
+    public boolean equals(Object otherObject) {
+        if (!super.equals(otherObject))
+            return false;
+        Manager other = (Manager) otherObject;
+        return bouns == other.bouns;
+    }
+
+    @Override
     public String toString() {
         return "Manager{" +"name='" + getName() + '\'' +
                 ", salary=" + getSalary() +

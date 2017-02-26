@@ -1,6 +1,8 @@
 package com.lumr.job;
 
 import java.time.LocalDate;
+import java.util.Objects;
+
 import com.lumr.abstractClasses.Person;
 
 /**
@@ -48,6 +50,52 @@ public class Employee extends Person{
                 ", salary=" + salary +
                 ", hireDay=" + hireDay +
                 '}';
+    }
+
+    /**
+     * 判断对象相等
+     * @param otherObject
+     * @return
+     */
+    public boolean equals(Object otherObject){
+        if (this == otherObject) return true;
+        if (otherObject == null) return false;
+        if (getClass() != otherObject.getClass()) return false;
+        Employee other = (Employee) otherObject;
+        return Objects.equals(name, other.name)
+                && salary == other.salary
+                && Objects.equals(hireDay, other.hireDay);
+    }
+
+    /**
+     * 示范代码
+     * @return
+     */
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//
+//        Employee employee = (Employee) o;
+//
+//        if (Double.compare(employee.salary, salary) != 0) return false;
+//        if (!name.equals(employee.name)) return false;
+//        return hireDay.equals(employee.hireDay);
+//    }
+
+    /**
+     * 示范代码
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name.hashCode();
+        temp = Double.doubleToLongBits(salary);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + hireDay.hashCode();
+        return result;
     }
 
     /**

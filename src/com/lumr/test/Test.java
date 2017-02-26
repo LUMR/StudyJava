@@ -12,6 +12,11 @@ public class Test {
         Manager lu = new Manager();
         System.out.println(lu);
         System.out.println(lili);
+        Employee[] managers = new Employee[8];
+        Employee[] staff = managers;
+        staff[0] = new Employee("dd", 1000, 2010, 2, 20);
+        System.out.println(managers[0]);
+        System.out.println(staff[0]);
     }
     //提升工资
     public static void tripleSalary(Employee emp, double x){
