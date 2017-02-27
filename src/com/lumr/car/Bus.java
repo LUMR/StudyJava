@@ -16,7 +16,7 @@ public class Bus extends Car {
     /**
      *
      * @param day 租赁天数
-     * @return
+     * @return 租金
      */
     public double getDailyRent(int day) {
         if (day > 150)

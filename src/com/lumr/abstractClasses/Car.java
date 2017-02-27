@@ -41,6 +41,7 @@ public abstract class Car {
     public double getDailyRent() {
         return dailyRent;
     }
+
     public abstract double getDailyRent(int day);
 
     public void setDailyRent(double rent) {
