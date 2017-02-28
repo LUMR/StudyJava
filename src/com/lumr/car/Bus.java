@@ -3,6 +3,7 @@ package com.lumr.car;
 import com.lumr.abstractClasses.Car;
 
 /**
+ * 巴士类
  * Created by FS on 2017/2/24.
  */
 public class Bus extends Car {

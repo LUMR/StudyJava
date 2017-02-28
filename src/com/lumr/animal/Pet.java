@@ -8,6 +8,9 @@ public class Pet {
     private int age;
     private String sex;
 
+    public Pet(){
+        System.out.println("这是一只宠物。");
+    }
     public Pet(String name, int age, String sex) {
         this.name = name;
         this.age = age;

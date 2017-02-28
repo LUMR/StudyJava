@@ -4,6 +4,7 @@ import com.lumr.job.Employee;
 import com.lumr.job.Manager;
 
 /**
+ * 雇员系统测试
  * Created by lumr on 2017/2/22.
  */
 public class Test {

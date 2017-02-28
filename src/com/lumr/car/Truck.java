@@ -3,6 +3,7 @@ package com.lumr.car;
 import com.lumr.abstractClasses.Car;
 
 /**
+ * 卡车类
  * Created by fsweb on 17-2-27.
  */
 public class Truck extends Car {

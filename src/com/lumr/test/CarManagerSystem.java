@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
+ * 出租车管理系统
  * Created by FS on 2017/2/24.
  */
 public class CarManagerSystem {
@@ -52,6 +53,10 @@ public class CarManagerSystem {
         return null;
     }
 
+    /**
+     * 获取目前的汽车数据
+     * @return 汽车数据数组
+     */
     public String[][] getCarData(){
         String[][] carsData = new String[3][4];
         for (int i = 0; i < cars.length; i++) {

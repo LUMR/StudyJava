@@ -3,6 +3,7 @@ package com.lumr.car;
 import com.lumr.abstractClasses.Car;
 
 /**
+ * 轿车类
  * Created by FS on 2017/2/24.
  */
 public class Carrriage extends Car {
