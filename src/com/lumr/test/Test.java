@@ -2,6 +2,7 @@ package com.lumr.test;
 
 import com.lumr.job.Employee;
 import com.lumr.job.Manager;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 /**
  * 雇员系统测试
@@ -22,6 +23,10 @@ public class Test {
     //提升工资
     public static void tripleSalary(Employee emp, double x){
         emp.raiseSalary(x);
+    }
+
+    public void connectMysql(){
+        MysqlDataSource conn = new MysqlDataSource();
     }
 
 }

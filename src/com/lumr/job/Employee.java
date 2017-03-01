@@ -24,6 +24,12 @@ public class Employee extends Person{
         this.hireDay = LocalDate.now();
     }
 
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+        this.hireDay = LocalDate.now();
+    }
+
     /**
      * constructor
      * @param name 名字
