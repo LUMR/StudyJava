@@ -1,7 +1,9 @@
 package com.lumr.test;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import com.lumr.animal.Dog;
+
+import java.sql.ResultSet;
+import java.util.*;
 
 /**
  * 集合
@@ -9,6 +11,25 @@ import java.util.LinkedList;
  */
 public class ArraysTest {
     public static void main(String[] args) {
+        ArraysTest test = new ArraysTest();
+        test.setlist();
+        test.hashmap();
+    }
+
+    public void arrayslist(){
+        List<Dog> ls = new ArrayList<Dog>();
+
+        for (int i = 0; i < 3; i++) {
+            Dog dog = new Dog("狗"+i,i+10,"雄");
+            ls.add(dog);
+        }
+
+        for (int i = 0; i < 3; i++) {
+            Dog dog = ls.get(i);
+            System.out.println(dog);
+        }
+    }
+    public void note() {
         /**
          * 查询的效率比较高
          */
@@ -18,6 +39,9 @@ public class ArraysTest {
         String name2 = "my goo";
         String name3 = "my god";
         //定义集合对象
+        /**
+         * 在内存中分配连续的空间,历遍元素和随机访问元素的效率比较高
+         */
         ArrayList array = new ArrayList();
 
         //往集合放东西
@@ -40,7 +64,7 @@ public class ArraysTest {
             System.out.println(array.get(i));
         }
         /**
-         * 链表
+         * 链表,采用链表存储方式
          * 增删改时效率高
          */
         LinkedList list = new LinkedList();
@@ -51,4 +75,34 @@ public class ArraysTest {
 
 
     }
+    public void setlist(){
+        Set<Dog> set = new HashSet<>();
+        for (int i = 0; i < 3; i++) {
+            Dog dog = new Dog("狗"+i,i+10,"雄");
+            set.add(dog);
+        }
+
+        Iterator<Dog> ite = set.iterator();
+        for (int i = 0; ite.hasNext(); i++) {
+            System.out.println(ite.next());
+        }
+    }
+    public void hashmap(){
+        Map<String,Dog> map = new HashMap<>();
+
+        for (int i = 0; i < 3; i++) {
+            Dog dog = new Dog("狗"+i,i+10,"雄");
+            map.put(String.valueOf(i),dog);
+        }
+
+        map.forEach((k,v) -> System.out.println("k="+k+",value="+v));
+
+        Set rst = map.keySet();
+        Iterator<String> ite = rst.iterator();
+        while (ite.hasNext()){
+            System.out.println(map.get(ite.next()));
+        }
+    }
+
+
 }

@@ -40,4 +40,13 @@ public class Pet {
     public void setSex(String sex) {
         this.sex = sex;
     }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }

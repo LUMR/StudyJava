@@ -39,7 +39,7 @@ public class JdbcTest {
     }
 
     public void save(String name,String author,String desc){
-        String sql = "insert into test(name,author,description) values (?,?,?)";
+        String sql = "insert into arrayslist(name,author,description) values (?,?,?)";
         try {
             pre = conn.prepareStatement(sql);
             pre.setString(1,name);
@@ -56,7 +56,7 @@ public class JdbcTest {
     }
 
     public void delete(int id){
-        String sql = "delete from test where id = "+id;
+        String sql = "delete from arrayslist where id = "+id;
         if (this.query(sql)>0)
             System.out.println("删除成功");
         else
@@ -64,7 +64,7 @@ public class JdbcTest {
     }
 
     public void delete(String name){
-        String sql = "delete from test where name = '"+name+"'";
+        String sql = "delete from arrayslist where name = '"+name+"'";
         if (this.query(sql)>0)
             System.out.println("删除成功");
         else
@@ -72,7 +72,7 @@ public class JdbcTest {
     }
 
     public void update(){
-        String sql = "update test set name = '尼尔' where id = 1";
+        String sql = "update arrayslist set name = '尼尔' where id = 1";
         if(this.query(sql)>0)
             System.out.println("更新成功");
         else
@@ -80,7 +80,7 @@ public class JdbcTest {
     }
 
     public void alter(String colName){
-        String sql = "alter table test add "+colName+" varchar(20) default 'nothing'";
+        String sql = "alter table arrayslist add "+colName+" varchar(20) default 'nothing'";
         try {
             pre = conn.prepareStatement(sql);
 //            pre.setString(1,colName);
@@ -110,7 +110,7 @@ public class JdbcTest {
      * 获得所有结果
      */
     public void queryAll(){
-        String sql = "select * from test";
+        String sql = "select * from arrayslist";
         try {
             rs = conn.createStatement();
             ResultSet result = rs.executeQuery(sql);

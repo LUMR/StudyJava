@@ -15,4 +15,5 @@ public class Dog extends Pet {
     public void bite(){
         System.out.println("咬人");
     }
+
 }
