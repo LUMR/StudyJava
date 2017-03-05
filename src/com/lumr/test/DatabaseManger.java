@@ -1,6 +1,7 @@
 package com.lumr.test;
 
 import com.lumr.database.ConnectDatabase;
+import com.lumr.database.ConnectHome;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -109,8 +110,13 @@ public class DatabaseManger {
      * 连接数据库的方法
      */
     public void connect(){
+        //连接本机上的数据库时采用此类
         ConnectDatabase com = new ConnectDatabase();
+        //连接别的机器的数据库时用此类
+        ConnectHome home = new ConnectHome();
         conn = com.connMysql(true);
+        if (conn == null)
+            conn = home.conn();
         try {
             stmt = conn.createStatement();
         } catch (SQLException e) {
@@ -122,7 +128,7 @@ public class DatabaseManger {
      * 显示test表中的所有数据
      */
     public void showAll(){
-        String sql = "select * from arrayslist";
+        String sql = "select * from test";
         try {
             result = stmt.executeQuery(sql);
             while (result.next()){
