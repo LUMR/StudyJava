@@ -88,6 +88,9 @@ public class ArraysTest {
         }
     }
     public void hashmap(){
+        int[] iss = new int[7];
+
+
         Map<String,Dog> map = new HashMap<>();
 
         for (int i = 0; i < 3; i++) {
