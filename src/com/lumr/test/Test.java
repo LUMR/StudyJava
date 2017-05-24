@@ -4,7 +4,10 @@ import com.lumr.job.Employee;
 import com.lumr.job.Manager;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 雇员系统测试
@@ -21,6 +24,7 @@ public class Test {
         System.out.println(s1 == s2);
         System.out.println(s1 == s3);
         System.out.println(s1 == s1.intern());
+        System.out.println("返回结果："+finallyTest());
     }
     //提升工资
     public static void tripleSalary(Employee emp, double x){
@@ -30,5 +34,23 @@ public class Test {
     public void connectMysql(){
         MysqlDataSource conn = new MysqlDataSource();
     }
+
+    public void innerClass(){
+    }
+
+    public static int finallyTest(){
+        int i = 1;
+        try{
+            return i;
+        }finally {
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(++i);
+        }
+    }
+
 
 }
