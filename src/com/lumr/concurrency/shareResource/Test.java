@@ -6,7 +6,10 @@ package com.lumr.concurrency.shareResource;
  */
 public class Test {
     public static void main(String[] args) {
-        EvenChecker.test(new EvenGenerator(), 6);
-//        NoEvenChecker.test(new EvenGenerator(),5);
+//        System.out.println("加锁的：");
+//        EvenChecker.test(new SynchronizedEventGenerator(), 5);
+//        System.out.println("不加锁的：");
+//        EvenChecker.test(new EvenGenerator(),10);
+        EvenChecker.test(new AtomicEvenGenerator(),10);
     }
 }

@@ -7,6 +7,10 @@ package com.lumr.concurrency.shareResource;
 public class EvenGenerator extends IntGenerator {
     private int currentEvenValue = 0;
 
+    /**
+     * 自增方法
+     * synchronized:同步，同一对象只允许同时有一个任务访问标了synchronized的方法
+     */
     @Override
     public int next() {
         ++currentEvenValue;//Danger point here!

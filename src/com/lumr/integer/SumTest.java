@@ -1,6 +1,7 @@
 package com.lumr.integer;
 
 /**
+ * 两个int最小值相加=0
  * Created by lumr on 2017/5/22.
  */
 public class SumTest {
