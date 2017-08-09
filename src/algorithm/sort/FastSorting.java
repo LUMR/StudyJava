@@ -20,15 +20,18 @@ public class FastSorting {
     }
 
     private void sort() {
-        sort(list);
+        sort(list,true);
     }
 
-    private void sort(List<Integer> list) {
+    private void sort(List<Integer> list,boolean small) {
         int size = list.size();
         if (size == 0)
             return;
         if (size == 1) {
-            newList.add(list.get(0));
+            if (small)
+                newList.add(0,list.get(0));
+            else
+                newList.add(list.get(0));
             return;
         }
         List<Integer> smaller = new ArrayList<>();
@@ -41,9 +44,12 @@ public class FastSorting {
             else
                 bigger.add(list.get(i));
         }
-        newList.add(middle);
-        sort(smaller);
-        sort(bigger);
+        if (small)
+            newList.add(0,middle);
+        else
+            newList.add(middle);
+        sort(smaller,true);
+        sort(bigger,false);
     }
 
     /**
@@ -63,10 +69,8 @@ public class FastSorting {
         List<Integer> list = new ArrayList<>();
         list.add(18);
         list.add(6);
-        list.add(23);
-        list.add(7);
+        list.add(24);
         list.add(10);
-        list.add(8);
         list.add(8);
         FastSorting sorting = new FastSorting(list);
         System.out.println(sorting.getArray());
