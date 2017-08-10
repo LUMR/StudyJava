@@ -43,9 +43,9 @@ public class FastSorting {
         int height = list.get(end);
         int i = begin;
         for (int j = end - 1; i < j; i++) {
-            if (list.get(i) > height) {
+            if (list.get(i) >= height) {
                 for (; j > i; j--) {
-                    if (list.get(j) < height) {
+                    if (list.get(j) <= height) {
                         exchange(i, j);
                         break;
                     }
@@ -56,6 +56,7 @@ public class FastSorting {
             list.add(i, list.get(end));
             list.remove(end + 1);
         }
+
         sort(begin, i);
         sort(i + 1, end);
     }
@@ -77,8 +78,12 @@ public class FastSorting {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         list.add(18);
+        list.add(18);
+        list.add(6);
         list.add(6);
         list.add(24);
+        list.add(24);
+        list.add(10);
         list.add(10);
         list.add(8);
         FastSorting sorting = new FastSorting(list);
