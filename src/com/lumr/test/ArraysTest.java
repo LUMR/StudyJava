@@ -2,7 +2,6 @@ package com.lumr.test;
 
 import com.lumr.animal.Dog;
 
-import java.sql.ResultSet;
 import java.util.*;
 
 /**
@@ -16,11 +15,11 @@ public class ArraysTest {
         test.hashmap();
     }
 
-    public void arrayslist(){
+    public void arrayslist() {
         List<Dog> ls = new ArrayList<Dog>();
 
         for (int i = 0; i < 3; i++) {
-            Dog dog = new Dog("狗"+i,i+10,"雄");
+            Dog dog = new Dog("狗" + i, i + 10, "雄");
             ls.add(dog);
         }
 
@@ -29,6 +28,7 @@ public class ArraysTest {
             System.out.println(dog);
         }
     }
+
     public void note() {
         /**
          * 查询的效率比较高
@@ -75,10 +75,11 @@ public class ArraysTest {
 
 
     }
-    public void setlist(){
+
+    public void setlist() {
         Set<Dog> set = new HashSet<>();
         for (int i = 0; i < 3; i++) {
-            Dog dog = new Dog("狗"+i,i+10,"雄");
+            Dog dog = new Dog("狗" + i, i + 10, "雄");
             set.add(dog);
         }
 
@@ -87,22 +88,23 @@ public class ArraysTest {
             System.out.println(ite.next());
         }
     }
-    public void hashmap(){
+
+    public void hashmap() {
         int[] iss = new int[7];
 
 
-        Map<String,Dog> map = new HashMap<>();
+        Map<String, Dog> map = new HashMap<>();
 
         for (int i = 0; i < 3; i++) {
-            Dog dog = new Dog("狗"+i,i+10,"雄");
-            map.put(String.valueOf(i),dog);
+            Dog dog = new Dog("狗" + i, i + 10, "雄");
+            map.put(String.valueOf(i), dog);
         }
 
-        map.forEach((k,v) -> System.out.println("k="+k+",value="+v));
+        map.forEach((k, v) -> System.out.println("k=" + k + ",value=" + v));
 
         Set rst = map.keySet();
         Iterator<String> ite = rst.iterator();
-        while (ite.hasNext()){
+        while (ite.hasNext()) {
             System.out.println(map.get(ite.next()));
         }
     }
