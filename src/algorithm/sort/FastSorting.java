@@ -2,6 +2,7 @@ package algorithm.sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReadWriteLock;
 
 /**
  * 快速排序算法
@@ -9,7 +10,6 @@ import java.util.List;
 public class FastSorting {
     private List<Integer> list;
     private List<Integer> newList = new ArrayList<>();
-
     public FastSorting(List<Integer> list) {
         this.list = list;
         sort();
