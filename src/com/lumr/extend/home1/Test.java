@@ -9,12 +9,7 @@ import com.lumr.extend.home2.Son;
  */
 public class Test {
     public static void main(String[] args) {
-        Son son = new Son("");
-        Father father = new Son("");
-        Father mother = son;
-        System.out.println(father.getName());
-        System.out.println(mother.getName());
-        mother = (Father)son;
-        System.out.println(mother.getName());
+        A b = new B();
+        b = new B();
     }
 }
