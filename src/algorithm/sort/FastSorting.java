@@ -2,6 +2,7 @@ package algorithm.sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 快速排序算法
@@ -75,26 +76,17 @@ public class FastSorting {
      * @param k 元素2
      */
     private void exchange(int i, int k) {
-        Integer temp;
-        temp = list.get(i);
-        list.set(i, list.get(k));
-        list.set(k, temp);
+        list.set(k, list.set(i, list.get(k)));
     }
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        list.add(18);
-        list.add(18);
-        list.add(6);
-        list.add(8);
-        list.add(6);
-        list.add(24);
-        list.add(25);
-        list.add(24);
-        list.add(27);
-        list.add(10);
-        list.add(10);
-        list.add(8);
+        Random random = new Random();
+        for (int i = 0; i < 18; i++) {
+            list.add(random.nextInt(50));
+        }
+
+        System.out.println(list);
         FastSorting sorting = new FastSorting(list);
         System.out.println(sorting.getArray());
     }

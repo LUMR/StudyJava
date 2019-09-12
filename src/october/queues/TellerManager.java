@@ -58,7 +58,7 @@ public class TellerManager implements Runnable{
             while (!Thread.interrupted()) {
                 TimeUnit.MILLISECONDS.sleep(adjustmentPeriod);
                 adjustTellerNumber();
-                System.out.println(customers +"{");
+                System.out.println(customers + "{");
                 workingTellers.forEach(teller -> System.out.println(teller.shortString()+" "));
                 System.out.println("}");
             }
