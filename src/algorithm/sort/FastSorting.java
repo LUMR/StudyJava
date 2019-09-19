@@ -2,6 +2,7 @@ package algorithm.sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 快速排序算法
@@ -27,37 +28,43 @@ public class FastSorting {
 
     /**
      * 递归排序
+     *
      * @param begin 要排序的区间起始元素坐标
-     * @param end 要排序的区间终止元素坐标
+     * @param end   要排序的区间终止元素坐标
      */
     private void sort(int begin, int end) {
         int diff = end - begin;
-        if (diff == 0)
+        if (diff <= 0)
             return;
         if (diff == 1) {
             if (list.get(begin) > list.get(end))
                 exchange(begin, end);
             return;
         }
-
         int height = list.get(end);
         int i = begin;
-        for (int j = end - 1; i < j; i++) {
+        int j = end - 1;
+        while (i <= j) {
             if (list.get(i) >= height) {
-                for (; j > i; j--) {
-                    if (list.get(j) <= height) {
+                while (i <= j) {
+                    if (list.get(j) < height) {
                         exchange(i, j);
+                        i++;
+                        j--;
                         break;
+                    } else {
+                        j--;
                     }
                 }
+            } else {
+                i++;
             }
         }
-        synchronized (this) {//防止多线程时互相干扰
-            list.add(i, list.get(end));
-            list.remove(end + 1);
-        }
 
-        sort(begin, i);
+        list.add(i, list.get(end));
+        list.remove(end + 1);
+
+        sort(begin, i - 1);
         sort(i + 1, end);
     }
 
@@ -69,23 +76,17 @@ public class FastSorting {
      * @param k 元素2
      */
     private void exchange(int i, int k) {
-        Integer temp;
-        temp = list.get(i);
-        list.set(i, list.get(k));
-        list.set(k, temp);
+        list.set(k, list.set(i, list.get(k)));
     }
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        list.add(18);
-        list.add(18);
-        list.add(6);
-        list.add(6);
-        list.add(24);
-        list.add(24);
-        list.add(10);
-        list.add(10);
-        list.add(8);
+        Random random = new Random();
+        for (int i = 0; i < 18; i++) {
+            list.add(random.nextInt(50));
+        }
+
+        System.out.println(list);
         FastSorting sorting = new FastSorting(list);
         System.out.println(sorting.getArray());
     }
