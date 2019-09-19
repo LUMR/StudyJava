@@ -1,4 +1,4 @@
-package com.lumr.single;
+package designpatterns.singleton;
 
 /**
  * 单例模式
